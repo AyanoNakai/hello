@@ -12,13 +12,20 @@ public class kazuate {
     for(i=0; i<5; i++){
       System.out.print(i+1+"回目 予想した数字を入力：");
       in = sc.nextInt();
-      dif = ans - in; //答えとの差
+      dif = in - ans; //答えとの差
       if(dif == 0){
         System.out.println("正解しました");
         break;
       }
-      else if(Math.abs(dif) > 20) System.out.println("20以上離れています");
-      System.out.println("不正解です"); 
+      else if(dif < 0){
+        System.out.println("答えは入力された数より大きいです");
+      }
+      else if(dif > 0){
+        System.out.println("答えは入力された数より小さいです");
+      }
+
+      if(Math.abs(dif) > 20) System.out.println("20以上離れています");
+      
     }
 
     System.out.println("終了します");
